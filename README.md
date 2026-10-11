@@ -114,12 +114,3 @@ This project provides practical experience with web application development, PHP
 
 GitHub: https://github.com/Daradeaarti/ParkEasy
 
-## Author
-
-**Aarti**
-
-B.E. – Artificial Intelligence and Data Science
-
-## License
-
-Add a license only after deciding how you want others to use, modify, and distribute this project.
