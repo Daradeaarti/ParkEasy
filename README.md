@@ -1,140 +1,125 @@
-﻿ParkEasy - Smart Urban Parking & AI Navigation System
+﻿# ParkEasy – Smart Parking Management System
 
-[![PHP Version](https://img.shields.io/badge/PHP-8.0%2B-777BB4?logo=php&logoColor=white)](https://php.net)
-[![MySQL Database](https://img.shields.io/badge/Database-MySQL-4479A1?logo=mysql&logoColor=white)](https://mysql.com)
-[![Leaflet OSM](https://img.shields.io/badge/Maps-Leaflet%20%2B%20OpenStreetMap-199900?logo=openstreetmap&logoColor=white)](https://leafletjs.com)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+ParkEasy is a smart parking management project designed to make finding and managing parking spaces easier. It aims to provide users with a convenient way to explore parking information, manage bookings, and access digital parking tickets.
 
-**ParkEasy** is a next-generation smart parking management and booking web application. It helps commuters effortlessly discover vacant parking spots in real-time, predict peak-hour traffic, calculate dynamic fares, navigate via an interactive radar map, and check in using digital QR tickets.
+## About the Project
 
----
+Finding available parking can be time-consuming, especially in busy areas. ParkEasy aims to simplify the parking process through an interactive web interface and digital features.
 
-## ­ƒîƒ Key Features
+The project combines parking management functionality with an interactive map, QR-based ticketing, and an AI assistant.
 
-### 1. ­ƒù║´©Å Interactive Leaflet & OpenStreetMap Radar
-- **100% Free, Zero-Restriction Map API**: Powered by Leaflet.js and OpenStreetMap (no API keys, billing, or quotas needed).
-- **Color-Coded Live Pins**:
-  - ­ƒƒó **Green (>20 slots)**: High availability.
-  - ­ƒƒí **Orange (6ÔÇô20 slots)**: Moderate rush.
-  - ­ƒö┤ **Red (Ôëñ5 slots)**: Almost full.
-- **Interactive Marker Popups**: View tariffs for 2-wheelers and 4-wheelers, addresses, ratings, and a direct **"ÔÜí Quick Book"** action.
-- **GPS "Locate Me"**: Automatic user location detection with real-time distance (in km) calculated to every parking lot.
-- **Voice Search (Speech-to-Text)**: Speak parking queries directly using the free HTML5 Web Speech API.
-- **Smart Filter Pills**: Instant one-click filtering by *EV Charging*, *Budget Friendly (ÔëñÔé╣30)*, *High Availability*, and *Top Rated*.
+## Key Features
 
-### 2. ­ƒñû ParkBot AI Smart Assistant
-- Floating assistant available across all pages.
-- Analyzes live MySQL database state to answer natural language queries in real time:
-  - *"Where is the cheapest parking?"*
-  - *"Which lots have EV charging stations?"*
-  - *"Where can I find the most open slots?"*
-  - *"How do I cancel my reservation?"*
-- Powered by an intelligent contextual local database engine + free LLM inference fallback.
+- **Interactive Map:** Explore parking locations using an interactive map powered by Leaflet.
+- **Parking Booking:** Access the parking booking workflow provided by the application.
+- **QR Ticketing:** Support digital parking tickets with QR-related functionality.
+- **AI Assistant:** Interact with the project's AI assistant.
+- **Booking Management:** Use the available booking and confirmation pages to manage the parking workflow.
+- **Web Interface:** Access the system through a browser.
 
-### 3. ÔÅ▒´©Å AI Fare & Rush Hour Predictor
-- Calculates spot probability and congestion likelihood based on time of arrival.
-- Displays recommendation badges (e.g. *94% Spot Probability (Low Rush)* vs *Peak Hour Warning*).
-- Dynamic duration calculator based on entry and exit times with vehicle-specific tariffs.
+*Note: Keep only the features that are implemented and working in your current version.*
 
-### 4. ­ƒÄƒ´©Å Digital QR Ticketing & Receipts
-- Generates client-side QR codes holding Pass Code, Vehicle Plate, and Location.
-- Built-in **"Print / Save as PDF"** action for paperless entry and attendant scanning.
+## Technology Stack
 
-### 5. ­ƒöä Atomic Real-time Slot Synchronization
-- **On Booking**: Automatically reserves and decrements `available_slots` in MySQL.
-- **On Cancellation**: Safely releases the slot and increments `available_slots` back into the pool.
+Update this list to match the technologies actually used in your source code.
 
----
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** PHP
+- **Mapping:** Leaflet.js
+- **Database:** Add the actual database technology used by the project
+- **Development Tools:** Visual Studio Code, Git, GitHub
+- **Deployment:** Vercel configuration is included in the repository; confirm that the deployed application and its backend services work correctly.
 
-## ­ƒøá´©Å Technology Stack
+## How the System Works
 
-- **Backend:** PHP 8.0+
-- **Database:** MySQL / MariaDB (Prepared Statements & PDO/mysqli)
-- **Frontend:** HTML5, Modern CSS (Glassmorphism, Flexbox, CSS Grid), Vanilla JavaScript
-- **Mapping:** [Leaflet.js](https://leafletjs.com/) & [OpenStreetMap](https://www.openstreetmap.org/)
-- **Voice Recognition:** Native Web Speech API
-- **QR Code Engine:** QRCode.js (Client-side)
-- **Icons & Typography:** Google Fonts (Outfit & Manrope)
+1. The user opens the ParkEasy website.
+2. The user explores the available parking interface and map.
+3. The user follows the booking workflow supported by the application.
+4. The system provides booking-related information and QR ticket functionality where implemented.
+5. The user can access the other available features, including the AI assistant.
 
----
+## Project Structure
 
-## ­ƒÜÇ Quick Setup & Installation
+```text
+ParkEasy/
+├── api/
+├── assets/
+├── config/
+├── sql/
+├── api_ai_chat.php
+├── booked.php
+├── confirmbook.php
+├── index.php
+├── vercel.json
+└── README.md
+```
+
+*The exact files and folders may vary depending on your current project version.*
+
+## Installation and Setup
 
 ### Prerequisites
-- [XAMPP](https://www.apachefriends.org/) (Apache + MySQL + PHP 8.0+)
-- Modern web browser (Chrome, Edge, Firefox, Safari)
 
-### 1. Clone or Download Repository
+- PHP and a compatible local development environment
+- A database server, if required by the application
+- A web browser
+- Git (optional, for cloning the repository)
+
+### Run Locally
+
+1. Clone or download the repository.
+2. Open the project folder in your development environment.
+3. Configure the database and application settings according to the files in the `config/` and `sql/` folders, if applicable.
+4. Start the appropriate PHP development server or local web server.
+5. Open the local application URL in your browser.
+
+Example using PHP's built-in development server:
+
 ```bash
-git clone https://github.com/Daradeaarti/ParkEasy.git
-```
-Place the project folder into your web server directory (e.g., `C:/xampp/htdocs/ParkEasy`).
-
-### 2. Configure MySQL Database
-1. Open XAMPP Control Panel and start **Apache** and **MySQL**.
-2. Go to [http://localhost/phpmyadmin](http://localhost/phpmyadmin).
-3. Create a new database named `parkeasy`.
-4. Import the SQL files from the `sql/` directory:
-   - First import `sql/parkeasy.sql`
-   - Run `sql/update_database.php` in your browser or CLI (`php sql/update_database.php`) to apply the schema updates and rich location data.
-
-### 3. Verify Database Connection
-Check `config/config.php`:
-```php
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "parkeasy";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-?>
+php -S localhost:8080
 ```
 
-### 4. Run the Website
-- **Using PHP Built-in Server:**
-  ```bash
-  php -S localhost:8080
-  ```
-  Open `http://localhost:8080/index.php` in your browser.
-- **Using XAMPP Apache:**
-  Open `http://localhost/ParkEasy/index.php`.
+Then open:
 
----
-
-## ­ƒôü Project Structure
-
-```
-ParkEasy/
-Ôö£ÔöÇÔöÇ assets/
-Ôöé   Ôö£ÔöÇÔöÇ css/
-Ôöé   Ôöé   ÔööÔöÇÔöÇ style.css
-Ôöé   Ôö£ÔöÇÔöÇ images/
-Ôöé   Ôöé   Ôö£ÔöÇÔöÇ logo.jpg
-Ôöé   Ôöé   Ôö£ÔöÇÔöÇ qr.png
-Ôöé   Ôöé   ÔööÔöÇÔöÇ ...
-Ôöé   ÔööÔöÇÔöÇ js/
-Ôöé       Ôö£ÔöÇÔöÇ ai_assistant.js       # ParkBot AI chat widget & speech recognition
-Ôöé       ÔööÔöÇÔöÇ ai_predictor.js       # Dynamic pricing & occupancy rush predictor
-Ôö£ÔöÇÔöÇ config/
-Ôöé   ÔööÔöÇÔöÇ config.php               # Database configuration
-Ôö£ÔöÇÔöÇ sql/
-Ôöé   Ôö£ÔöÇÔöÇ parkeasy.sql             # Base database schema
-Ôöé   ÔööÔöÇÔöÇ update_database.php      # Schema upgrade & data migration script
-Ôö£ÔöÇÔöÇ api_ai_chat.php              # AI assistant backend query handler
-Ôö£ÔöÇÔöÇ booked.php                   # Booking success page with pass summary
-Ôö£ÔöÇÔöÇ confirmbook.php              # Reservation form with live fare calculator
-Ôö£ÔöÇÔöÇ index.php                    # Home landing page
-Ôö£ÔöÇÔöÇ login.php                    # User authentication
-Ôö£ÔöÇÔöÇ logout.php                   # Session termination
-Ôö£ÔöÇÔöÇ map.php                      # Interactive Leaflet OpenStreetMap parking radar
-Ôö£ÔöÇÔöÇ mybookings.php               # Reservation dashboard & cancellation handler
-Ôö£ÔöÇÔöÇ receipt.php                  # Digital QR boarding pass & PDF printer
-Ôö£ÔöÇÔöÇ registration.php             # User registration
-Ôö£ÔöÇÔöÇ service.php                  # User services dashboard
-ÔööÔöÇÔöÇ README.md                    # Project documentation
+```text
+http://localhost:8080/index.php
 ```
 
----
+Use this command only if PHP is installed and the project is configured to run this way.
 
-## ­ƒôä License
-This project is licensed under the MIT License.
+## Screenshots
+
+Add screenshots of your actual working application here to help visitors understand the interface.
+
+Suggested screenshots:
+- Home page
+- Interactive parking map
+- Booking interface
+- QR ticket
+- AI assistant
+
+## Future Improvements
+
+- Improve parking availability updates.
+- Enhance the booking and confirmation workflow.
+- Strengthen application security and input validation.
+- Improve mobile responsiveness and accessibility.
+- Add clearer booking history and user feedback, where appropriate.
+
+## Learning Outcomes
+
+This project provides practical experience with web application development, PHP, frontend technologies, interactive maps, booking workflows, version control, and deployment configuration.
+
+## Repository
+
+GitHub: https://github.com/Daradeaarti/ParkEasy
+
+## Author
+
+**Aarti**
+
+B.E. – Artificial Intelligence and Data Science
+
+## License
+
+Add a license only after deciding how you want others to use, modify, and distribute this project.
